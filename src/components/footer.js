@@ -34,46 +34,40 @@ const PostList = styled.div`
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 40px;
-  }
 
-  ul li {
-    display: list-item;
-    text-align: -webkit-match-parent;
-    font-family: 'Nanum Barun Gothic';
-    font-weight: normal;
-    margin: 0;
-    padding: 0;
-    line-height: 22px;
-  }
+    li {
+      display: list-item;
+      text-align: -webkit-match-parent;
+      font-family: 'Nanum Barun Gothic';
+      font-weight: normal;
+      margin: 0;
+      padding: 0;
+      line-height: 22px;
 
-  ul li a {
-    color: #555;
-    font-family: 'Nanum Barun Gothic';
-    text-decoration: none;
-  }
+      a {
+        color: #555;
+        text-decoration: none;
+      }
 
-  ul .number strong {
-    display: block;
-    padding: 3px 0;
-    font-size: 24px;
-    color: #6bcbba;
-  }
+      h4 {
+        color: #555;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0;
+        padding: 0 0 5px 0;
 
-  ul li h4 {
-    color: #555;
-    font-weight: bold;
-    font-size: 16px;
-    font-family: 'Nanum Barun Gothic';
-    margin: 0;
-    padding: 0 0 5px 0;
-  }
+        a {
+          color: #555;
+        }
+      }
+    }
 
-  ul li h4 a {
-    font-size: 16px;
-    color: #555;
-    font-weight: bold;
-    font-family: 'Nanum Barun Gothic';
-    text-decoration: none;
+    .number strong {
+      display: block;
+      padding: 3px 0;
+      font-size: 24px;
+      color: #6bcbba;
+    }
   }
 
   .arrow {
