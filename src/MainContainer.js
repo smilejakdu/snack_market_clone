@@ -97,11 +97,11 @@ const MainContainer = () => {
           
           <Row style={{margin: '20px 0', height: '280px'}} justify="space-around">
             <Col span={12}>
-              <img src={mainsmall1} />
+              <img src={mainsmall1} alt="과자 선물세트 무료배송" />
             </Col>
             
             <Col span={12}>
-              <img src={mainsmall2} />
+              <img src={mainsmall2} alt="과자마켓이 준비한 초특가 상품" />
             </Col>
           </Row>
           
@@ -115,16 +115,16 @@ const MainContainer = () => {
           <hr />
           <Row>
             <Col span={6}>
-              <img src={jj1} />
+              <img src={jj1} alt="칙촉 55%할인" />
             </Col>
             <Col span={6}>
-              <img src={jj2} />
+              <img src={jj2} alt="롯데 ABC초콜릿 56%할인" />
             </Col>
             <Col span={6}>
-              <img src={jj3} />
+              <img src={jj3} alt="롯데 파인애플 65%할인" />
             </Col>
             <Col span={6}>
-              <img src={jj4} />
+              <img src={jj4} alt="가나 초보다 55%할인" />
             </Col>
           </Row>
           <h3 style={textAlignCenter}>베스트 상품</h3>
@@ -136,16 +136,16 @@ const MainContainer = () => {
           <hr />
           <Row>
             <Col span={6}>
-              <img src={bb1} />
+              <img src={bb1} alt="세트상품" />
             </Col>
             <Col span={6}>
-              <img src={bb2} />
+              <img src={bb2} alt="인기상품" />
             </Col>
             <Col span={6}>
-              <img src={bb3} />
+              <img src={bb3} alt="신상품" />
             </Col>
             <Col span={6}>
-              <img src={bb4} />
+              <img src={bb4} alt="특가상품" />
             </Col>
           </Row>
           <h3 style={textAlignCenter}>새로운 상품</h3>
