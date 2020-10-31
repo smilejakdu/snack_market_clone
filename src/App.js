@@ -1,9 +1,13 @@
 import React from "react";
-import MainContainer from './MainContainer';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import MainPage from "./pages/MainPage";
+
 function App() {
   return (
     <div>
-      <MainContainer />
+      <Router>
+        <Route path="/" exact="true" component={MainPage}></Route>
+      </Router>
     </div>
   );
 }
