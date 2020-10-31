@@ -1,17 +1,18 @@
-import React from 'react';
-import { Row, Carousel, Col } from 'antd';
+import React, { useState } from 'react';
+import { Row, Carousel, Col, Modal, Button } from 'antd';
 import 'antd/dist/antd.css';
+import './common.css';
 import { SearchOutlined } from '@ant-design/icons';
-import mainsmall1 from './img/mainsmall1.gif';
-import mainsmall2 from './img/mainsmall2.gif';
-import jj1 from './img/jj1.gif';
-import jj2 from './img/jj2.gif';
-import jj3 from './img/jj3.gif';
-import jj4 from './img/jj4.gif';
-import bb1 from './img/bb1.gif';
-import bb2 from './img/bb2.gif';
-import bb3 from './img/bb3.gif';
-import bb4 from './img/bb4.gif';
+import mainsmall1 from '../img/mainsmall1.gif';
+import mainsmall2 from '../img/mainsmall2.gif';
+import jj1 from '../img/jj1.gif';
+import jj2 from '../img/jj2.gif';
+import jj3 from '../img/jj3.gif';
+import jj4 from '../img/jj4.gif';
+import bb1 from '../img/bb1.gif';
+import bb2 from '../img/bb2.gif';
+import bb3 from '../img/bb3.gif';
+import bb4 from '../img/bb4.gif';
 
 const MainContainer = () => {
 
@@ -32,9 +33,9 @@ const MainContainer = () => {
     textAlign: 'center',
     background: '#364d79',
   };
-  
-  
 
+  const [visible, setVisible] = useState(false);
+  
   // 슬라이드 map함수
   function SnackList({ snackList }) {
     return (
@@ -42,10 +43,21 @@ const MainContainer = () => {
         <p>id: {snackList.id}</p>
         <p>품명 : {snackList.title}</p>
         <p>가격 : {snackList.price}</p>
-        {/* <button onClick={alert('click')}> */}
+        <Button type="primary" onClick={() => setVisible(true)}>
           <SearchOutlined  />
-        {/* </button> */}
-        
+        </Button>
+        <Modal
+          title={snackList.title}
+          centered
+          visible={visible}
+          onOk={() => setVisible(false)}
+          onCancel={() => setVisible(false)}
+          width={1000}
+        >
+          <p>id: {snackList.id}</p>
+          <p>품명 : {snackList.title}</p>
+          <p>가격 : {snackList.price}</p>
+        </Modal>
       </Col>
     );
   }
@@ -105,7 +117,7 @@ const MainContainer = () => {
             </Col>
           </Row>
           
-          <h3 style={textAlignCenter}>초특가 할인</h3>
+          <h3 style={textAlignCenter} className="line">초특가 할인</h3>
           <Row justify="space-around">
             {snackLists.map(snackList => (
               <SnackList snackList={snackList} />
@@ -127,7 +139,7 @@ const MainContainer = () => {
               <img src={jj4} alt="가나 초보다 55%할인" />
             </Col>
           </Row>
-          <h3 style={textAlignCenter}>베스트 상품</h3>
+          <h3 style={textAlignCenter} className="line">베스트 상품</h3>
           <Row justify="space-around">
             {snackLists.map(snackList => (
               <SnackList snackList={snackList} />
@@ -148,13 +160,13 @@ const MainContainer = () => {
               <img src={bb4} alt="특가상품" />
             </Col>
           </Row>
-          <h3 style={textAlignCenter}>새로운 상품</h3>
+          <h3 style={textAlignCenter} className="line">새로운 상품</h3>
           <Row justify="space-around">
             {snackLists.map(snackList => (
               <SnackList snackList={snackList} />
             ))}
           </Row>
-          <h3 style={textAlignCenter}>특별상품</h3>
+          <h3 style={textAlignCenter} className="line">특별상품</h3>
           <Row justify="space-around">
             {snackLists.map(snackList => (
               <SnackList snackList={snackList} />
