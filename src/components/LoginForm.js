@@ -77,7 +77,7 @@ const LoginForm = () => {
           </li>
         </ul>
         {/* <a href="#">로그인</a> */}
-        <StyledButton><a href="#">로그인</a></StyledButton>
+        <StyledButton><a href="/">로그인</a></StyledButton>
       </form>
     </LoginFormBlock>
   );
