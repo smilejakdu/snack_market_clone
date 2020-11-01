@@ -1,6 +1,7 @@
-import React from "react";
-import { Row, Carousel, Col } from "antd";
+import React, {useState} from "react";
+import { Row, Carousel, Col, Modal, Button } from "antd";
 import "antd/dist/antd.css";
+import palette from '../utils/styles/palette';
 import { SearchOutlined } from "@ant-design/icons";
 import mainsmall1 from "../utils/img/mainsmall1.gif";
 import mainsmall2 from "../utils/img/mainsmall2.gif";
@@ -16,6 +17,8 @@ import bb3 from "../utils/img/bb3.gif";
 import bb4 from "../utils/img/bb4.gif";
 
 const MainContainer = () => {
+  const [visible, setVisible] = useState(false);
+
   // 메인 레이아웃 설정
   const MainLayout = {
     width: "1200px",
@@ -31,9 +34,14 @@ const MainContainer = () => {
     color: "#fff",
     lineHeight: "160px",
     textAlign: "center",
-    background: "#364d79",
+    background: `${palette.orange[6]}`
   };
 
+  const buttonStyle = {
+    background: `${palette.gray[3]}`,
+    border: `1px solid ${palette.gray[3]}`
+  }
+  
   // 슬라이드 map함수
   function SnackList({ snackList }) {
     return (
@@ -41,9 +49,23 @@ const MainContainer = () => {
         <p>id: {snackList.id}</p>
         <p>품명 : {snackList.title}</p>
         <p>가격 : {snackList.price}</p>
-        {/* <button onClick={alert('click')}> */}
-        <SearchOutlined />
-        {/* </button> */}
+        <Button type="primary" onClick={() => setVisible(true)}
+          style={buttonStyle}
+        >
+          <SearchOutlined />
+        </Button>
+        <Modal
+          title={snackList.title}
+          centered
+          visible={visible}
+          onOk={() => setVisible(false)}
+          onCancel={() => setVisible(false)}
+          width={500}
+          
+        >
+          <p>품명 : {snackList.title}</p>
+          <p>가격 : {snackList.price}</p>
+        </Modal>
       </Col>
     );
   }
