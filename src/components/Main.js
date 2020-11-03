@@ -1,16 +1,14 @@
 import React, {useState} from "react";
-import { Row, Carousel, Col, Modal, Button } from "antd";
+import { MainLayout, SliderStyle, ButtonStyle, HrCenter, DivisionLine } from "./Main.style";
 import "antd/dist/antd.css";
-import palette from '../utils/styles/palette';
+import { Row, Carousel, Col, Modal } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import mainsmall1 from "../utils/img/mainsmall1.gif";
 import mainsmall2 from "../utils/img/mainsmall2.gif";
-
 import jj1 from "../utils/img/jj1.gif";
 import jj2 from "../utils/img/jj2.gif";
 import jj3 from "../utils/img/jj3.gif";
 import jj4 from "../utils/img/jj4.gif";
-
 import bb1 from "../utils/img/bb1.gif";
 import bb2 from "../utils/img/bb2.gif";
 import bb3 from "../utils/img/bb3.gif";
@@ -18,42 +16,25 @@ import bb4 from "../utils/img/bb4.gif";
 
 const MainContainer = () => {
   const [visible, setVisible] = useState(false);
-
-  // 메인 레이아웃 설정
-  const MainLayout = {
-    width: "1200px",
-    margin: "0 auto",
-  };
-  // 제목 폰트 가운데 설정
-  const textAlignCenter = {
-    textAlign: "center",
-  };
-  // 슬라이더 설정
-  const contentStyle = {
-    height: "420px",
-    color: "#fff",
-    lineHeight: "160px",
-    textAlign: "center",
-    background: `${palette.orange[6]}`
-  };
-
-  const buttonStyle = {
-    background: `${palette.gray[3]}`,
-    border: `1px solid ${palette.gray[3]}`
-  }
   
+  // 슬라이드 제목map
+  const sliderHeaders = ['Test1', 'Test2', 'Test3'];
+  const sliderHeaderList = sliderHeaders.map(sliderHeader => 
+    <SliderStyle>
+      <h3>{sliderHeader}</h3>
+    </SliderStyle>
+  );
+
   // 슬라이드 map함수
   function SnackList({ snackList }) {
     return (
-      <Col span={4} style={textAlignCenter}>
+      <Col span={4} style={{textAlign: 'center'}}>
         <p>id: {snackList.id}</p>
         <p>품명 : {snackList.title}</p>
         <p>가격 : {snackList.price}</p>
-        <Button type="primary" onClick={() => setVisible(true)}
-          style={buttonStyle}
-        >
+        <ButtonStyle type="primary" onClick={() => setVisible(true)}>
           <SearchOutlined />
-        </Button>
+        </ButtonStyle>
         <Modal
           title={snackList.title}
           centered
@@ -61,11 +42,12 @@ const MainContainer = () => {
           onOk={() => setVisible(false)}
           onCancel={() => setVisible(false)}
           width={500}
-          
+          footer={null}
         >
           <p>품명 : {snackList.title}</p>
           <p>가격 : {snackList.price}</p>
         </Modal>
+
       </Col>
     );
   }
@@ -101,16 +83,11 @@ const MainContainer = () => {
 
   return (
     <>
-      <div style={MainLayout}>
+      <MainLayout>
         <Row>
           <Col span={24}>
             <Carousel autoplay>
-              <div>
-                <h3 style={contentStyle}>1</h3>
-              </div>
-              <div>
-                <h3 style={contentStyle}>2</h3>
-              </div>
+              {sliderHeaderList}
             </Carousel>
           </Col>
         </Row>
@@ -128,14 +105,14 @@ const MainContainer = () => {
           </Col>
         </Row>
 
-        <h3 style={textAlignCenter}>초특가 할인</h3>
+        <HrCenter>초특가 할인</HrCenter>
         <Row justify="space-around">
           {snackLists.map((snackList) => (
             <SnackList snackList={snackList} />
           ))}
         </Row>
 
-        <hr />
+        <DivisionLine />
         <Row>
           <Col span={6}>
             <img src={jj1} alt="칙촉 55%할인" />
@@ -150,13 +127,13 @@ const MainContainer = () => {
             <img src={jj4} alt="가나 초보다 55%할인" />
           </Col>
         </Row>
-        <h3 style={textAlignCenter}>베스트 상품</h3>
+        <HrCenter>베스트 상품</HrCenter>
         <Row justify="space-around">
           {snackLists.map((snackList) => (
             <SnackList snackList={snackList} />
           ))}
         </Row>
-        <hr />
+        <DivisionLine />
         <Row>
           <Col span={6}>
             <img src={bb1} alt="세트상품" />
@@ -171,19 +148,19 @@ const MainContainer = () => {
             <img src={bb4} alt="특가상품" />
           </Col>
         </Row>
-        <h3 style={textAlignCenter}>새로운 상품</h3>
+        <HrCenter>새로운 상품</HrCenter>
         <Row justify="space-around">
           {snackLists.map((snackList) => (
             <SnackList snackList={snackList} />
           ))}
         </Row>
-        <h3 style={textAlignCenter}>특별상품</h3>
+        <HrCenter>특별상품</HrCenter>
         <Row justify="space-around">
           {snackLists.map((snackList) => (
             <SnackList snackList={snackList} />
           ))}
         </Row>
-      </div>
+      </MainLayout>
     </>
   );
 };
