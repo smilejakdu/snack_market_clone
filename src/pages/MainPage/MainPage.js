@@ -1,10 +1,11 @@
 import React from "react";
-import Main from "../components/Main";
+import Main from "../../components/Main";
+
 const MainPage = () => {
   return (
     <div>
       <div>header</div>
-      <Main></Main>
+      <Main />
       <div>footer</div>
     </div>
   );
