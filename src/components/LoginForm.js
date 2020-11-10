@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
+import { useHistory } from "react-router-dom";
 
 const LoginFormBlock = styled.div`
   form {
@@ -34,7 +35,7 @@ const StyledInput = styled.input`
   /* 어떤 폼에 들어가든 인풋 폼이 깔끔하게 나오게 100% */
   max-width: 60%;
   display: flex;
-  height: 10px;
+  height: 20px;
 `;
 
 const StyledButton = styled.button`
@@ -63,21 +64,49 @@ const StyledButton = styled.button`
 `;
 
 const LoginForm = () => {
+  const history = useHistory();
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const onChangeUsername = useCallback(e => {
+    setUsername(e.target.value);
+  });
+  const onChangePassword = useCallback(e => {
+    setPassword(e.target.value);
+  });
+
+  const onClick = () => {
+    alert("로그인에 성공했습니다.");
+    let path = '/';
+    history.push(path);
+  }
+
   return (
     <LoginFormBlock>
       <form>
         <ul>
           <li>
             <label>아이디</label>
-            <StyledInput autoComplete="username" name="username" />
+            <StyledInput 
+              value={username} 
+              onChange={onChangeUsername} 
+              autoComplete="username" 
+              name="username" 
+            />
           </li>
           <li>
             <label>비밀번호</label>
-            <StyledInput autoComplete="password" name="password" />
+            <StyledInput
+              value={password}
+              onChange={onChangePassword}
+              type="password"
+              autoComplete="password"
+              name="password"
+            />
           </li>
         </ul>
         {/* <a href="#">로그인</a> */}
-        <StyledButton><a href="/">로그인</a></StyledButton>
+        <StyledButton onClick={onClick}><a>로그인</a></StyledButton>
       </form>
     </LoginFormBlock>
   );

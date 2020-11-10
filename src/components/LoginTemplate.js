@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import LoginForm from '../components/LoginForm';
 
 
 const LoginTemplateBlock = styled.div`
@@ -66,7 +65,7 @@ const LoginTemplateBlock = styled.div`
       #signup-content {
           margin: 20px 0;
           color: #999;
-          font-size: 13px;
+          font-size: 11px;
           font-weight: bold;
       }
     }
@@ -102,23 +101,23 @@ const StyledButton = styled.button`
 `;
 
 
-const LoginTemplate = () => {
+const LoginTemplate = ( {children} ) => {
   return (
     <LoginTemplateBlock>
-      <div class="background">
-        <div class="login-range">
-          <div class="login-notice">
+      <div className="background">
+        <div className="login-range">
+          <div className="login-notice">
             <p id="login-members">MEMBERS</p>
             <p id='login-login'>LOGIN</p>
           </div>
-            <LoginForm />
+            {children}
         </div>
-        <div class="border"></div>
-        <div class="signup-range">
+        <div className="border"></div>
+        <div className="signup-range">
           <p id="signup">SIGN <strong>UP</strong></p>
           <p id="signup-content">회원가입을 하시면 더 많은<br />혜택을 받으실 수 있습니다.</p>
 
-          <div class="button">
+          <div className="button">
             <StyledButton><a herf="#">회원가입하기</a></StyledButton>
             <StyledButton><a href="#">아이디/비번찾기</a></StyledButton>
           </div>
