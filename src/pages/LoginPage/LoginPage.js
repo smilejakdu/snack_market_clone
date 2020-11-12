@@ -1,6 +1,7 @@
 import React from "react";
-import LoginForm from "../../components/LoginForm";
-import LoginTemplate from "../../components/LoginTemplate";
+import LoginForm from "../../components/LoginForm/LoginForm";
+import LoginTemplate from "../../components/LoginTemplate/LoginTemplate";
+import SimpleLoginForm from "../../components/SimpleLoginForm/SimpleLoginForm";
 
 
 const LoginPage = () => {
@@ -9,6 +10,7 @@ const LoginPage = () => {
       <LoginTemplate>
         <LoginForm />
       </LoginTemplate>
+      <SimpleLoginForm />
     </div>
   );
 };
