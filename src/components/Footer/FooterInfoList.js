@@ -1,6 +1,6 @@
 import React from 'react';
 import { FooterInfoBlock, FooterInfo } from './FooterInfoList.style';
-import Study from '../utils/img/study.gif';
+import Study from '../../utils/img/study.gif';
 
 const FooterInfoList = () => {
 

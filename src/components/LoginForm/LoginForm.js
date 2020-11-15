@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { LoginFormBlock, StyledInput, StyledButton } from './LoginForm.style';
 import { useHistory } from "react-router-dom";
 
@@ -7,12 +7,12 @@ const LoginForm = () => {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const onChangeUsername = useCallback(e => {
+  const onChangeUsername = e => {
     setUsername(e.target.value);
-  });
-  const onChangePassword = useCallback(e => {
+  };
+  const onChangePassword = e => {
     setPassword(e.target.value);
-  });
+  };
 
   const onClick = () => {
     alert("로그인에 성공했습니다.");

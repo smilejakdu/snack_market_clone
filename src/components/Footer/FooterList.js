@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { FooterBlock, FooterListBlock, PostList } from './FooterList.style';
-import Arrow from '../utils/img/down_arrow.gif';
-import Study from '../utils/img/study.gif';
 
 
 const FooterList = ( /** 포스트 프롭 */) => {
@@ -52,17 +50,17 @@ const FooterList = ( /** 포스트 프롭 */) => {
         <PostList>
           <ul>
             <li>
-              <h4 class="arrow">NOTICE & EVENT</h4>
+              <h4 className="arrow">NOTICE & EVENT</h4>
             </li>
             {posts.map((post) => (
-              <li class='content'><a href='#'>{post.title}</a></li>
+              <li className='content'><a href='#'>{post.title}</a></li>
             ))}
           </ul>
         </PostList>
         <PostList>
           <ul>
             <li>
-              <h4 class="arrow">입금계좌안내</h4>
+              <h4 className="arrow">입금계좌안내</h4>
             </li>
             <li>
               국민 000000-000000-0000
@@ -75,12 +73,12 @@ const FooterList = ( /** 포스트 프롭 */) => {
         <PostList>
           <ul>
             <li>
-              <h4 class="arrow">고객센터</h4>
+              <h4 className="arrow">고객센터</h4>
             </li>
-            <li class="number">
+            <li className="number">
               <strong>02-000-0000</strong>
             </li>
-            <li class="number">
+            <li className="number">
               <strong>010-0000-0000</strong>
             </li>
             <li>

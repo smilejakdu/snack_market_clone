@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import Arrow from '../../utils/img/down_arrow.gif';
+import Study from '../../utils/img/study.gif';
 
 const FooterBlock = styled.div`
 position: relative;
