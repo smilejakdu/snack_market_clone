@@ -15,7 +15,7 @@ import bb3 from "../utils/img/bb3.gif";
 import bb4 from "../utils/img/bb4.gif";
 
 const MainContainer = () => {
-  const [visible, setVisible] = useState(false);
+  
   
   // 슬라이드 제목map
   const sliderHeaders = ['Test1', 'Test2', 'Test3'];
@@ -27,20 +27,21 @@ const MainContainer = () => {
 
   // 슬라이드 map함수
   function SnackList({ snackList }) {
+    const [modalVisible, setModalVisible] = useState(false);
     return (
       <Col span={4} style={{textAlign: 'center'}}>
         <p>id: {snackList.id}</p>
         <p>품명 : {snackList.title}</p>
         <p>가격 : {snackList.price}</p>
-        <ButtonStyle type="primary" onClick={() => setVisible(true)}>
+        <ButtonStyle type="primary" onClick={() => setModalVisible(true)}>
           <SearchOutlined />
         </ButtonStyle>
         <Modal
           title={snackList.title}
           centered
-          visible={visible}
-          onOk={() => setVisible(false)}
-          onCancel={() => setVisible(false)}
+          visible={modalVisible}
+          onOk={() => setModalVisible(false)}
+          onCancel={() => setModalVisible(false)}
           width={500}
           footer={null}
         >
