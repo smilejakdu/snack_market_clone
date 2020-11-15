@@ -10,13 +10,13 @@ const PostItem = (props) => {
 
   return (
     <tr>
-      <td scope="col">{id}</td>
-      <td scope="col"><FontAwesomeIcon icon={faNewspaper} /></td>
-      <td scope="col"></td>
-      <td scope="col">{content}</td>
-      <td scope="col">{name}</td>
-      <td scope="col">{date}</td>
-      <td scope="col">{hits}</td>
+      <td>{id}</td>
+      <td><FontAwesomeIcon icon={faNewspaper} /></td>
+      <td></td>
+      <td>{content}</td>
+      <td>{name}</td>
+      <td>{date}</td>
+      <td>{hits}</td>
     </tr>
   );
 };
@@ -92,6 +92,10 @@ const PostTemplate = ({ children }) => {
 
       <div className="post-title">
         [ {title.name} ] 
+      </div>
+
+      <div className="search">
+        {children}
       </div>
 
       <div className="content">

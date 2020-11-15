@@ -1,14 +1,12 @@
 import React from 'react';
 import PostTemplate from '../../components/PostTemplate';
-import FooterInfoList from '../../components/Footer/FooterInfoList';
+import SearchForm from '../../components/SearchForm';
 
 const PostPage = () => {
   return (
     <div>
       <PostTemplate>
-        <FooterInfoList />
-        <FooterInfoList />
-
+        <SearchForm />
       </PostTemplate>
     </div>
   );
