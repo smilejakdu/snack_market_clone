@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import palette from "../../utils/styles/palette";
 
 const PostTemplateBlock = styled.div`
   position: relative;
@@ -27,14 +28,14 @@ const PostTemplateBlock = styled.div`
       margin: 0;
       padding: 0;
       display: inline-flex;
-      color: #999;
+      color: ${palette.gray[10]};
 
       li {
         list-style-type: none;
 
         a {
           text-decoration: none !important;
-          color: #999;
+          color: ${palette.gray[10]};
         }
       }
 
@@ -46,7 +47,7 @@ const PostTemplateBlock = styled.div`
 
   .post-title {
     padding: 15px;
-    color: #999;
+    color: ${palette.gray[10]};
   }
 
   table {
@@ -59,12 +60,12 @@ const PostTemplateBlock = styled.div`
     thead {
       border-top: 1px solid #e5e5e5;
       border-bottom: 1px solid #e5e5e5;
-      color: #999;
+      color: ${palette.gray[10]};
     }
 
     tbody tr {
       border-bottom: 1px solid #e5e5e5;
-      color: #777;
+      color: ${palette.gray[11]};
     }
   }
 `;

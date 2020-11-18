@@ -18,7 +18,7 @@ const FooterInfo = styled.div`
 
     li {
       float: left;
-      width: 12%;
+      width: 14%;
       height: 32px;
       line-height: 32px;
       list-style: none;

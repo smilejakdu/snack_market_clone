@@ -1,10 +1,37 @@
 import React, { useState } from 'react';
 import { FooterBlock, FooterListBlock, PostList } from './FooterList.style';
+import { Link } from 'react-router-dom';
 
+const LinkItem = ({ url, title }) => {
+  return (
+    <li>
+      <h4><Link to={url}>{title}</Link></h4>
+    </li>
+  )
+}
 
 const FooterList = ( /** 포스트 프롭 */) => {
 
-  const [posts, setPosts] = useState([
+  const links = [
+    {
+      url: "#",
+      title: "회사소개",
+    },
+    {
+      url: "#",
+      title: "이용약관",
+    },
+    {
+      url: "#",
+      title: "개인정보처리방침",
+    },
+    {
+      url: "#",
+      title: "Q&A",
+    }
+  ];
+
+  const posts = [
     {
       id: 1,
       title: '⋅ 리액트 스터티',
@@ -17,25 +44,25 @@ const FooterList = ( /** 포스트 프롭 */) => {
       id: 3,
       title: '⋅ 열심히 고고',
     }
-  ])
+  ];
+
+  const abouts = [
+    "주식회사 치킨개발",
+    "주소 : 서울특별시 동작구 어쩌구 저쩌구",
+    "대표이사: 김치킨 개인정보보호책임자: 김치킨",
+    "사업자번호 : 000-00-000000",
+    "통신판매 : 제 2020-서울동작-0001호",
+    "Copyright (c) 2020 Chicken. All rights reserved.",
+  ]
 
   return (
     <FooterBlock>
       <FooterListBlock>
         <PostList>
           <ul>
-            <li>
-              <h4><a href="#">회사소개</a></h4>
-            </li>
-            <li>
-            <h4><a href="#">이용약관</a></h4>
-            </li>
-            <li>
-              <h4><a href="#">개인정보처리방침</a></h4>
-            </li>
-            <li>
-              <h4><a href="#">Q&A</a></h4>
-            </li>
+            {links.map((link) => {
+              return <LinkItem url={link.url} title={link.title} />
+            })}
             <li>
               <h4>-</h4>
             </li>
@@ -97,24 +124,9 @@ const FooterList = ( /** 포스트 프롭 */) => {
         </PostList>
         <PostList>
           <ul>
-            <li>
-              주식회사 치킨개발
-            </li>
-            <li>
-              주소 : 서울특별시 동작구 어쩌구 저쩌구
-            </li>
-            <li>
-              대표이사: 김치킨 개인정보보호책임자: 김치킨
-            </li>
-            <li>
-              사업자번호 : 000-00-000000
-            </li>
-            <li>
-              통신판매 : 제 2020-서울동작-0001호
-            </li>
-            <li>
-              Copyright (c) 2020 Chicken. All rights reserved.
-            </li>
+            {abouts.map((about) => {
+              return <li>{about}</li>
+            })}
           </ul>
         </PostList>
       </FooterListBlock>
