@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import palette from "../../utils/styles/palette";
 
 const LoginFormBlock = styled.div`
   form {
@@ -20,7 +21,7 @@ const LoginFormBlock = styled.div`
         label {
           width: 80px;
           padding-top: 3px;
-          color: #999;
+          color: ${palette.gray[10]};;
           font-weight: bold;
         }
       }
@@ -48,7 +49,7 @@ const StyledButton = styled.button`
   position: absolute;
   width: 20%;
   height: 100%;
-  background: #777;
+  background: ${palette.gray[11]};;
   text-shadow: 0px -1px rgba(0,0,0,0.5);
 
   a {

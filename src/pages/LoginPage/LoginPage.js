@@ -1,7 +1,7 @@
 import React from "react";
-import LoginForm from "../../components/LoginForm/LoginForm";
-import LoginTemplate from "../../components/LoginTemplate/LoginTemplate";
-import SimpleLoginForm from "../../components/SimpleLoginForm/SimpleLoginForm";
+import LoginForm from "../../components/LoginForm";
+import LoginTemplate from "../../components/LoginTemplate";
+import SimpleLoginForm from "../../components/SimpleLoginForm";
 
 
 const LoginPage = () => {

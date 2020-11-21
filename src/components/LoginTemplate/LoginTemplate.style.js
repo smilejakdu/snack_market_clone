@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import palette from "../../utils/styles/palette";
 
 const LoginTemplateBlock = styled.div`
   /* css 초기화 */
@@ -11,7 +12,7 @@ const LoginTemplateBlock = styled.div`
 
   border-width: 2px;
   border-style: solid;
-  border-image: linear-gradient(to bottom, #999, rgba(0, 0, 0, 0)) 1 100%;
+  border-image: linear-gradient(to bottom, ${palette.gray[10]}, rgba(0, 0, 0, 0)) 1 100%;
   border-top: 0px;
 
 
@@ -20,12 +21,12 @@ const LoginTemplateBlock = styled.div`
     display: flex;
     margin-bottom: 20px;
 
-    border-top: 2px solid #999;
+    border-top: 2px solid ${palette.gray[10]};;
 
     .border {
       border-width: 1px;
       border-style: solid;
-      border-image: linear-gradient(to bottom, #999, rgba(0, 0, 0, 0)) 1 100%;
+      border-image: linear-gradient(to bottom, ${palette.gray[10]}, rgba(0, 0, 0, 0)) 1 100%;
     }
     
     .login-range {
@@ -38,7 +39,7 @@ const LoginTemplateBlock = styled.div`
 
       #login-members {
         font-size: 25px;
-        color: #999;
+        color: ${palette.gray[10]};;
       }
 
       #login-login {
@@ -52,7 +53,7 @@ const LoginTemplateBlock = styled.div`
 
       #signup {
         font-size: 20px;
-        color: #999;
+        color: ${palette.gray[10]};;
 
         strong {
           font-size: 28px;
@@ -62,7 +63,7 @@ const LoginTemplateBlock = styled.div`
       }
       #signup-content {
           margin: 20px 0;
-          color: #999;
+          color: ${palette.gray[10]};;
           font-size: 11px;
           font-weight: bold;
       }
@@ -81,7 +82,7 @@ const StyledButton = styled.button`
   left: 70%;
   width: 80%;
   height: 100%;
-  background: #777;
+  background: ${palette.gray[11]};;
   text-shadow: 0px -1px rgba(0,0,0,0.5);
 
   a {
