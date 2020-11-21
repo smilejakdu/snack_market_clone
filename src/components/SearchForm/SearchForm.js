@@ -6,9 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const SearchForm = () => {
 
   const [value, setValue] = useState('')
-  const onChange = e => {
-    setValue(e.target.value);
-  }
 
   return (
     <SearchFormBlock>
@@ -28,7 +25,7 @@ const SearchForm = () => {
         </label>
         <input 
           value={value}
-          onChange={onChange}
+          onChange={e => setValue(e.target.value)}
         />
         <button><FontAwesomeIcon icon={faSearch} /></button>
       </form>

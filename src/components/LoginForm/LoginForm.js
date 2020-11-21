@@ -7,12 +7,6 @@ const LoginForm = () => {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const onChangeUsername = e => {
-    setUsername(e.target.value);
-  };
-  const onChangePassword = e => {
-    setPassword(e.target.value);
-  };
 
   const onClick = () => {
     alert("로그인에 성공했습니다.");
@@ -28,7 +22,7 @@ const LoginForm = () => {
             <label>아이디</label>
             <StyledInput 
               value={username} 
-              onChange={onChangeUsername} 
+              onChange={(e) => setUsername(e.target.value)} 
               autoComplete="username" 
               name="username" 
             />
@@ -37,7 +31,7 @@ const LoginForm = () => {
             <label>비밀번호</label>
             <StyledInput
               value={password}
-              onChange={onChangePassword}
+              onChange={e => setPassword(e.target.value)}
               type="password"
               autoComplete="password"
               name="password"
